@@ -7,10 +7,10 @@ interface UserState{
 }
 const initialState:UserState={ 
   user:{},
-  isVegMode:false
+  isVegMode:false,
 }
 export const userSlice=createSlice({ 
-  name:'user',
+  name:"user",
   initialState,
   reducers:{ 
     setUser:(state,action:PayloadAction<object>)=>{ 
