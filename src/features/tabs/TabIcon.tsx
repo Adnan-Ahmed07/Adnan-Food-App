@@ -89,13 +89,13 @@ export const DeliveryTabIcon:FC<IconProps> = ({focused}) => {
 } 
 export const ReorderTabIcon:FC<IconProps> = ({focused}) => {
 
-  return focused ? <TabIconFocused name="Devivery" /> : <TabIcon name="Devivery" />;
+  return focused ? <TabIconFocused name="Reorder" /> : <TabIcon name="Reorder" />;
 } 
 export const DiningTabIcon:FC<IconProps> = ({focused}) => {
 
-  return focused ? <TabIconFocused name="Devivery" /> : <TabIcon name="Devivery" />;
+  return focused ? <TabIconFocused name="Dining" /> : <TabIcon name="Dining" />;
 } 
 export const LiveTabIcon:FC<IconProps> = ({focused}) => {
 
-  return focused ? <TabIconFocused name="Devivery" /> : <TabIcon name="Devivery" />;
+  return focused ? <TabIconFocused name="Live" /> : <TabIcon name="Live" />;
 } 

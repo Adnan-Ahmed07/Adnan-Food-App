@@ -28,7 +28,7 @@ const ScalePress:FC<ScalePressProps> = ({onLongPress,onPress,children,style}) =>
   return (
    <TouchableOpacity onPress={onPress} onLongPress={onLongPress} onPressIn={onPressIn} onPressOut={onPressOut}
    activeOpacity={1}
-   style={style}
+   style={{...style}}
    >
     <Animated.View style={{transform:[{scale:scaleValue}],width:'100%'}}>
       {children}
