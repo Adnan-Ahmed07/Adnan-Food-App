@@ -5,6 +5,8 @@ import { homeStyles } from '@unistyles/homeStyles'
 import { useSafeAreaInsets } from 'react-native-safe-area-context'
 import Animated, { Extrapolate, interpolate, useAnimatedStyle } from 'react-native-reanimated'
 import { useSharedState } from '@features/tabs/SharedContext'
+import Graphics from '@components/home/Graphics'
+import HeaderSection from '@components/home/HeaderSection'
 
 const DeliveryScreen:FC = () => {
   const insets=useSafeAreaInsets()
@@ -46,10 +48,10 @@ const DeliveryScreen:FC = () => {
       <View style={{height:Platform.OS==='android'?insets.top:0}}/>
       <Animated.View style={[moveUpStyle]}>
       <Animated.View style={[moveUpStyleNotExtrapolate]}>
-
+      <Graphics/>
       </Animated.View>
       <Animated.View style={[backgroundColorChanges,styles.topHeader]}>
-
+      <HeaderSection/>
       </Animated.View>
       </Animated.View>
 
