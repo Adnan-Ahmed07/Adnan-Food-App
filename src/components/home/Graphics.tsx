@@ -1,4 +1,4 @@
-import { View, Text } from 'react-native'
+import { View, Text, Platform } from 'react-native'
 import React from 'react'
 import { useStyles } from 'react-native-unistyles'
 import { homeStyles } from '@unistyles/homeStyles'
@@ -12,7 +12,8 @@ const Graphics = () => {
       style={styles.lottie}
       source={require('@assets/animations/event.json')}
       autoPlay={false}
-      loop
+      loop={Platform.OS!=='android'}
+      hardwareAccelerationAndroid
       />
     
     </View>
