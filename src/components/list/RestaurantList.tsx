@@ -4,7 +4,7 @@ import React from 'react'
 const RestaurantList = () => {
   return (
     <View>
-      <Text>RestaurantList</Text>
+      <Text>hello Adnan</Text>
     </View>
   )
 }
