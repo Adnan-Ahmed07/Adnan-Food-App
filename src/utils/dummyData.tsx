@@ -1,9 +1,9 @@
 export const recommendedListData = [
     {
         "id": 1,
-        "name": "Punjabi Dhaba - Ali...",
+        "name": "Punjabi Ali Dhaka...",
         "discount": "40% OFF",
-        "discountAmount": "up to ₹80",
+        "": "up to ₹80",
         "time": "25 mins",
         "distance": "5.5 km",
         "rating": 4.2,
@@ -13,7 +13,7 @@ export const recommendedListData = [
         "id": 2,
         "name": "Butter Story",
         "discount": "10% OFF",
-        "discountAmount": "up to ₹40",
+        "": "up to ৳40",
         "time": "33 mins",
         "rating": 4.5,
         "distance": "8.5 km",
@@ -22,8 +22,8 @@ export const recommendedListData = [
     {
         "id": 3,
         "name": "Limone Lounge",
-        "discount": "FLAT ₹100 OFF",
-        "discountAmount": "up to ₹70",
+        "discount": "FLAT ৳100 OFF",
+        "": "up to ৳70",
         "time": "36 mins",
         "rating": 3.2,
         "distance": "7.5 km",
@@ -31,10 +31,10 @@ export const recommendedListData = [
     },
     {
         "id": 4,
-        "name": "Neel Kamal Veg Fami...",
-        "discount": "FLAT ₹50 OFF",
+        "name": "Vegetable Family",
+        "discount": "FLAT ৳50 OFF",
         "rating": 1.2,
-        "discountAmount": "up to ₹70",
+        "": "up to ৳70",
         "time": "19 mins",
         "distance": "1 km",
         "imageUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/yq7lqeehl9dsjjsogv5g"
@@ -43,7 +43,7 @@ export const recommendedListData = [
         "id": 5,
         "name": "Belgian Waffle",
         "discount": "30% OFF",
-        "discountAmount": "up to ₹75",
+        "": "up to ৳75",
         "time": "15 mins",
         "distance": "1 km",
         "rating": 2.2,
@@ -53,7 +53,7 @@ export const recommendedListData = [
         "id": 6,
         "name": "A One Bakery",
         "discount": "10% OFF",
-        "discountAmount": "up to ₹25",
+        "": "up to ৳25",
         "time": "24 mins",
         "rating": 4.2,
         "distance": "5 km",
@@ -63,7 +63,7 @@ export const recommendedListData = [
         "id": 7,
         "name": "Spice Symphony",
         "discount": "20% OFF",
-        "discountAmount": "up to ₹50",
+        "": "up to ৳50",
         "time": "22 mins",
         "rating": 4.2,
         "distance": "6.5 km",
@@ -73,7 +73,7 @@ export const recommendedListData = [
         "id": 8,
         "name": "Crispy Creations",
         "discount": "10% OFF",
-        "discountAmount": "up to ₹30",
+        "": "up to ৳30",
         "time": "18 mins",
         "distance": "4.2 km",
         "imageUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/1/e6705d31-3941-4fb8-a198-fc6e24cdcc36_861682.JPG"
@@ -82,7 +82,7 @@ export const recommendedListData = [
         "id": 9,
         "name": "Wow Momo",
         "discount": "15% OFF",
-        "discountAmount": "up to ₹40",
+        "": "up to ৳40",
         "time": "28 mins",
         "distance": "9 km",
         "imageUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/64fd45fd9f44c1737bc446e470bed666"
@@ -91,7 +91,7 @@ export const recommendedListData = [
         "id": 10,
         "name": "Pasta Fresca",
         "discount": "25% OFF",
-        "discountAmount": "up to ₹60",
+        "": "up to ৳60",
         "time": "35 mins",
         "distance": "7.8 km",
         "imageUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/c583ca6ce40b426797a78ae2ac91f2ec"
@@ -101,7 +101,7 @@ export const recommendedListData = [
         "name": "Burger Mania",
         "rating": 4.9,
         "discount": "30% OFF",
-        "discountAmount": "up to ₹70",
+        "": "up to ৳70",
         "time": "20 mins",
         "distance": "3.5 km",
         "imageUrl": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/df3122a3d49482073a839f47d0ae4281"
@@ -110,7 +110,7 @@ export const recommendedListData = [
         "id": 12,
         "name": "Sushi Delight",
         "discount": "30% OFF",
-        "discountAmount": "up to ₹70",
+        "": "up to ৳70",
         "rating": 4.9,
         "time": "40 mins",
         "distance": "11 km",
@@ -132,7 +132,7 @@ export const regularFoodData = [
     },
     {
         id: 3,
-        name: "north indian",
+        name: "Puran Dhaka",
         imageUrl: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_North%20Indian.png'
     },
     {
@@ -315,7 +315,7 @@ export const restaurantItemsData = [
     },
     {
         "id": "8",
-        "name": "Vegan Salad",
+        "name": "Vegetable Salad",
         "description": "Fresh greens with a variety of veggies.",
         "price": 120,
         "image": "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,h_600/72d1b879f7df5f9aa6cec68a05b8d63f",
