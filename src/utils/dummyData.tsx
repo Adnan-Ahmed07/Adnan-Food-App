@@ -1,9 +1,9 @@
 export const recommendedListData = [
     {
         "id": 1,
-        "name": "Punjabi Ali Dhaka...",
+        "name": "Dhakiya khana...",
         "discount": "40% OFF",
-        "": "up to ₹80",
+        "": "up to ৳80",
         "time": "25 mins",
         "distance": "5.5 km",
         "rating": 4.2,
@@ -132,8 +132,8 @@ export const regularFoodData = [
     },
     {
         id: 3,
-        name: "Puran Dhaka",
-        imageUrl: 'https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/MERCHANDISING_BANNERS/IMAGES/MERCH/2024/7/2/6ef07bda-b707-48ea-9b14-2594071593d1_North%20Indian.png'
+        name: "Puran",
+        imageUrl: 'https://i.ibb.co.com/1vRwbSB/6ef07bda-b707-48ea-9b14-2594071593d1-Adnan-in-Purandhaka01-1.jpg'
     },
     {
         id: 4,

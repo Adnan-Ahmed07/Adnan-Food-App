@@ -1,4 +1,4 @@
-import {View, Text, ScrollView, FlatList, Image, TouchableOpacity} from 'react-native';
+import {View, ScrollView, FlatList, Image, TouchableOpacity} from 'react-native';
 import React from 'react';
 import {useStyles} from 'react-native-unistyles';
 import {cardStyles} from '@unistyles/cardStyles';
@@ -45,6 +45,18 @@ const RecommendedList = () => {
             <Image style={styles.bookmarkIconImage} source={require('@assets/icons/bookmark.png')}></Image>
           </TouchableOpacity>
          <CustomGradient position='bottom' />
+        </View>
+
+        <View style={styles.itemInfo}>
+       <CustomText fontSize={10} color={Colors.text} fontFamily='Okra-Medium' numberOfLines={1}>
+         {item?.name}
+       </CustomText>
+       <View style={styles.flexRow}>
+         <Image source={require('@assets/icons/clock.png')} style={styles.clockIcon} />
+         <CustomText fontFamily='Okra-Medium' color={Colors.lightText} fontSize={9} numberOfLines={1}>
+          {`${item.time}• ${item?.distance}`}
+         </CustomText>
+       </View>
         </View>
       </ScalePress>
     )

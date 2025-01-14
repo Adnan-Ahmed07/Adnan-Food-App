@@ -6,6 +6,8 @@ import CustomText from '@components/global/CustomText'
 import { Colors } from '@unistyles/Constants'
 import Icon from '@components/global/Icons'
 import RecommendedList from '@components/list/RecommendedList'
+import BreakerText from '@components/ui/BreakerText'
+import RegularFoodList from '@components/list/RegularFoodList'
 
 const ExploreSection = () => {
   const [tabSelected,setSelectedTab]=useState(1)
@@ -27,6 +29,9 @@ const ExploreSection = () => {
 
       </View>
     <RecommendedList/>
+     <BreakerText text="WHAT'S ON YOUR MIND" />
+       <RegularFoodList/>
+     <BreakerText text="ALL RESTAURANTS IN DHAKA" />
     </View>
   )
 }
