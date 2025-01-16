@@ -17,7 +17,7 @@ const PhoneInput:FC <PhoneInputProps> = ({value,onChangeText,onBlur,onFocus}) =>
   return (
     <View style={styles.container}>
       <Pressable style={styles.countryPickerContainer} >
-       <CustomText variant='h2' >bd</CustomText>
+       <CustomText variant='h2' >🇧🇩</CustomText>
        <Icon iconFamily='Ionicons' name='caret-down-sharp' color={Colors.lightText} size={18} />
        </Pressable>
        <View style={styles.phoneInputContainer} >

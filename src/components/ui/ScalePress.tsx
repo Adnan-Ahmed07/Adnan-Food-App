@@ -2,8 +2,8 @@ import {  ViewStyle,Animated, TouchableOpacity } from 'react-native'
 import React, { FC } from 'react'
 
 interface ScalePressProps {
-  onPress: () => void;
-  onLongPress: () => void;
+  onPress?: () => void;
+  onLongPress?: () => void;
   children: React.ReactNode;
   style?:ViewStyle | ViewStyle[];
 }

@@ -1,5 +1,6 @@
 import LoginScreen from '@features/auth/LoginScreen';
 import SplashScreen from '@features/auth/SplashScreen';
+import RestaurantScreen from '@features/restaurants/RestaurantScreen';
 import AnimatedTabs from '@features/tabs/AnimatedTabs';
 import UserBottomTab from '@features/tabs/UserBottonTab';
 import {NavigationContainer} from '@react-navigation/native';
@@ -14,7 +15,8 @@ const Navigation: FC = () => {
       <Stack.Navigator
         initialRouteName="SplashScreen"
         screenOptions={{headerShown: false}}>
-        <Stack.Screen name="SplashScreen" component={SplashScreen} />
+          <Stack.Screen name="RestaurantScreen" component={RestaurantScreen} />
+        <Stack.Screen name='SplashScreen' component={SplashScreen} />
         <Stack.Screen
           options={{
             animation: 'fade',
