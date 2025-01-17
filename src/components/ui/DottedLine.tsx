@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View,StyleSheet } from 'react-native'
 import React from 'react'
 import Svg, { Line } from 'react-native-svg'
 const DottedLine = () => {
@@ -10,7 +10,7 @@ const DottedLine = () => {
        y1='0'
        x2='100%'
        y2='0'
-       stroke='#ee'
+       stroke='#eee'
        strokeWidth='2'
        strokeDasharray='3,3'
        

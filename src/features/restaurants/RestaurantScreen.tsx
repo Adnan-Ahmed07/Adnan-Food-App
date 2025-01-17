@@ -10,17 +10,16 @@ import RestaurantHeader from '@components/restaurant/RestaurantHeader';
 import SortingFilters from '@components/home/SortingFilters';
 import { restaurantItemsData, restaurantsItemfiltersOption } from '@utils/dummyData';
 import DottedLine from '@components/ui/DottedLine';
+import FoodCard from '@components/restaurant/FoodCard';
 
 const RestaurantScreen:FC = () => {
   const route=useRoute() as any;
   const restaurant=route?.params?.item
   const {styles}=useStyles(restaurantHeaderStyles)
   const insets=useSafeAreaInsets()
-  const renderItem=({itme}:any)=>{ 
+  const renderItem=({item}:any)=>{ 
     return(
-      <View>
-        
-      </View>
+      <FoodCard item={item} restaurant={restaurant} />
     )
   }
   return (
