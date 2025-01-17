@@ -384,12 +384,12 @@ export const filtersOption = [
     'Great Offers',
     'Rating 4.0',
     'Gourmet',
-    'Pure Veg'
+    'Veg-type'
 ]
 
 export const restaurantsItemfiltersOption = [
-    'Veg',
-    'Non-veg',
+    'Veg-type',
+    'Eat-anything',
     'Rating 4.0',
     'Bestseller',
     'Spicy',

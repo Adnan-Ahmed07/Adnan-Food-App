@@ -1,12 +1,43 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import {View, Text, TouchableOpacity} from 'react-native';
+import React, {FC} from 'react';
+import {useStyles} from 'react-native-unistyles';
+import {restaurantHeaderStyles} from '@unistyles/restuarantStyles';
+import {goBack} from '@utils/NavigationUtils';
+import Icon from '@components/global/Icons';
+import CustomText from '@components/global/CustomText';
 
-const RestaurantHeader = () => {
+const RestaurantHeader: FC<{title: string}> = ({title}) => {
+  const {styles} = useStyles(restaurantHeaderStyles);
   return (
-    <View>
-      <Text>RestaurantHeader</Text>
+    <View style={styles.headerContainer}>
+      <View style={styles.flexRowGap}>
+        <TouchableOpacity onPress={() => goBack()}>
+          <Icon
+            name="arrow-left"
+            iconFamily="MaterialCommunityIcons"
+            size={24}
+          />
+        </TouchableOpacity>
+        <View>
+          <CustomText
+            fontFamily="Okra-Medium"
+            fontSize={9.5}
+            style={styles.title}>
+            {title}
+          </CustomText>
+          <CustomText
+            fontFamily="Okra-Bold"
+            fontSize={9.5}
+            >
+            Recommended For You
+          </CustomText>
+        </View>
+      </View>
+      <TouchableOpacity onPress={()=>{}}>
+       <Icon name='ellipsis-vertical-sharp' iconFamily='Ionicons' size={24} />
+      </TouchableOpacity>
     </View>
-  )
-}
+  );
+};
 
-export default RestaurantHeader
+export default RestaurantHeader;
