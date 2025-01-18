@@ -1,4 +1,4 @@
-import { createSelector, createSlice } from "@reduxjs/toolkit";
+import { createSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { RootState } from "@states/store";
 
 interface CartItem{ 
@@ -38,6 +38,32 @@ export const cartSlice=createSlice({
  name:"cart",
  initialState,
  reducers: {
+  addItemToCart:(
+   state,
+   action:PayloadAction<{ 
+    restaurant:RestaurantDetails;
+    item:CartItem
+   }>
+
+  )=>{  
+     const {restaurant, item} = action.payload
+     const existingRestaurantCart = state.carts.find((cart) => cart.restaurant.id === restaurant.id);
+     if (existingRestaurantCart) {
+      const existingItem=existingRestaurantCart?.items?.find(cartItem=>cartItem?.id === item?.id)
+       if(existingItem){ 
+
+       }else{ 
+        
+       }
+
+     }else{ 
+       state.carts.push({ 
+        restaurant,
+        items:[{...item,quantity:1,cartPrice:item?.price}]
+       })
+     }
+  }
+
   
  }
 })
