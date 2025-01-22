@@ -20,7 +20,10 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         fontSize: RFValue(16),
         color: 'white',
         fontFamily: 'Okra-Bold',
-        margin: 0,
+        margin:0,
+    
+        alignItems: 'center',
+        
     },
     lowOpacity: {
         opacity: 0.5,
