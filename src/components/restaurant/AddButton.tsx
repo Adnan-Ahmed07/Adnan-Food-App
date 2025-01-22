@@ -15,6 +15,7 @@ import Icon from '@components/global/Icons';
 import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
 import CustomModal from '@components/modal/CustomModal';
+import AddItemModal from '@components/modal/AddItemModal';
 const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
   const dispatch = useAppDispatch();
   const {styles} = useStyles(foodStyles);
@@ -25,9 +26,12 @@ const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
 
 const openAddmodal=()=>{ 
   modalRef?.current?.openModal(
-   <View>
-    <Text>adnan</Text>
-   </View>
+   <AddItemModal 
+   item={item}
+   onClose={()=>modalRef?.current?.close()}
+    restaurant={restaurant}
+   
+   />
 
   ) 
 
