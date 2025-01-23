@@ -17,13 +17,11 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         marginBottom: 10
     },
     animatedCount: {
-        fontSize: RFValue(16),
+        fontSize: RFValue(16), 
         color: 'white',
         fontFamily: 'Okra-Bold',
-        margin:0,
-    
-        alignItems: 'center',
-        
+        textAlign: 'center', 
+        paddingHorizontal: 10, 
     },
     lowOpacity: {
         opacity: 0.5,
@@ -66,7 +64,7 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         marginTop: 5,
         bottom: -10,
     },
-    addButtonContainer: (isAdded: boolean) => ({
+    addButtonContainer: (isAdded) => ({
         width: 120,
         borderWidth: 0.7,
         borderRadius: 10,
@@ -84,6 +82,7 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
         justifyContent: 'center',
         alignItems: 'center',
     },
+    
     plusSmallIcon: {
         position: "absolute",
         top: -1,
@@ -92,9 +91,17 @@ export const foodStyles = createStyleSheet(({ device, colors, border }) => ({
     selectedContainer: {
         height: '100%',
         width: '100%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        flexDirection: 'row',
+        flexDirection: 'row', 
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
         paddingHorizontal: 10,
+    },
+    iconStyle: {
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        width: 30,
+        height: 30,
+        backgroundColor: colors.primary_light,
+        borderRadius: 15, 
     }
 }))

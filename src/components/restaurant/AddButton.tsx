@@ -77,33 +77,37 @@ const openAddmodal=()=>{
   return (
     <>
     <CustomModal ref={modalRef}/>
-      <View style={styles.addButtonContainer(cart != null)}>
-        {cart ? (
-          <View style={styles.selectedContainer}>
-            <ScalePress onPress={removeCartHandler}>
-              <Icon
-                iconFamily="MaterialCommunityIcons"
-                color="#fff"
-                name="minus-thick"
-                size={RFValue(13)}
-              />
+    <View style={styles.addButtonContainer(cart != null)}>
+    {cart ? (
+        <View style={styles.selectedContainer}>
+           
+            <ScalePress onPress={removeCartHandler} style={styles.iconStyle}>
+                <Icon
+                    iconFamily="MaterialCommunityIcons"
+                    color="#fff"
+                    name="minus-thick"
+                    size={RFValue(13)}
+                />
             </ScalePress>
+
+            
             <AnimatedNumbers
-              includeComma={false}
-              animationDuration={300}
-              animateToNumber={cart?.quantity}
-              fontStyle={styles.animatedCount}
+                includeComma={false}
+                animationDuration={300}
+                animateToNumber={cart?.quantity}
+                fontStyle={styles.animatedCount}
             />
 
-            <ScalePress onPress={addCartHandler}>
-              <Icon
-                iconFamily="MaterialCommunityIcons"
-                color="#fff"
-                name="plus-thick"
-                size={RFValue(13)}
-              />
+            
+            <ScalePress onPress={addCartHandler} style={styles.iconStyle}>
+                <Icon
+                    iconFamily="MaterialCommunityIcons"
+                    color="#fff"
+                    name="plus-thick"
+                    size={RFValue(13)}
+                />
             </ScalePress>
-          </View>
+        </View>
         ) : (
           <TouchableOpacity
             onPress={addCartHandler}

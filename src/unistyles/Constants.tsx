@@ -17,6 +17,7 @@ export const Colors = {
     border: '#E5E9EF',
     lightText: '#9197A6',
     active: '#019A51',
+    minus: '#FF6F61',
     dark: '#18171C'
 }
 

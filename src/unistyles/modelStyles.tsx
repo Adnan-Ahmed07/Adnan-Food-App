@@ -94,18 +94,20 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
     },
     footerContainer: {
         flexDirection: 'row',
-        alignItems: 'center',
-        justifyContent: 'space-between',
+        alignItems: 'center', // Ensures vertical alignment
+        justifyContent: 'space-between', // Space between quantity selector and button
         backgroundColor: colors.background,
-        shadowOffset: { width: 1, height: -3 },
+        shadowOffset: { width: 0, height: -2 },
         shadowOpacity: 0.1,
-        elevation: 5,
-        shadowRadius: 2,
+        elevation: 8,
+        shadowRadius: 4,
         zIndex: 2,
         shadowColor: colors.text,
-        padding: 10,
-        paddingBottom: Platform.OS === 'ios' ? 30 : 10
-    },
+        paddingHorizontal: 10, // Horizontal padding for internal spacing
+        paddingVertical: Platform.OS === 'ios' ? 15 : 10, // Adjust for platform differences
+        borderTopWidth: 1,
+        borderTopColor: colors.border,
+      },
     noShadowFooterContainer: {
         flexDirection: 'row',
         alignItems: 'center',
@@ -116,22 +118,28 @@ export const modelStyles = createStyleSheet(({ device, border, colors }) => ({
     },
     selectedContainer: {
         height: 45,
-        width: '30%',
-        justifyContent: 'space-between',
-        alignItems: 'center',
         flexDirection: 'row',
+        alignItems: 'center', 
+        justifyContent: 'center', 
         paddingHorizontal: 10,
         borderWidth: 1,
         borderColor: colors.active,
         borderRadius: 12,
-        backgroundColor: colors.active_light
-    },
-    animatedCount: {
+        backgroundColor: colors.active_light,
+        width: '30%', 
+        overflow: 'hidden', 
+      },
+      
+      animatedCount: {
         fontSize: RFValue(16),
         color: colors.text,
         fontFamily: 'Okra-Bold',
-        margin: 0,
-    },
+        textAlign: 'center', 
+        marginHorizontal: 5, 
+        lineHeight: 45, 
+      },
+    
+    
     addButtonContainer: {
         backgroundColor: colors.active,
         borderRadius: 10,
