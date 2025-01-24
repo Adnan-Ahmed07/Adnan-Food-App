@@ -1,6 +1,6 @@
 import {
   View,
-  Text,
+  
   Image,
   TouchableOpacity,
   ScrollView,
@@ -24,8 +24,8 @@ function transformSelectedOptions(
 ){ 
    return Object.entries(selectedOption).map(([type, index]) => {
 
-     const customization= customizationOptions?.find((option: any)=>option.type===type)
-       if(! customization || !customization?.options[index as number]){
+     const customization= customizationOptions?.find((options: any)=>options.type===type)
+       if(! customization || !customization?.option[index as number]){
          throw new Error(`Invalid customization type or options for ${type}`)
        }
         return {
@@ -74,6 +74,29 @@ const AddItemModal: FC<{item: any; restaurant: any; onClose: () => void}> = ({
     },[item])
 
 
+const calulatePrice=(quantity:number,selectedOption:Record<string,number>)=>{
+  const basePrice=item?.price || 0
+  let customizationPrice=0
+
+  Object.keys(selectedOption).forEach((type)=>{
+    const optionIndex=selectedOption[type]
+    const optionPrice=item?.customizationOptions?.find((c:any)=>c.type===type)?.options?.[optionIndex]?.price || 0
+    customizationPrice+=optionPrice
+  })
+  return (basePrice+customizationPrice)*quantity
+}
+
+const selectedOptionHandler=(type:string,index:number)=>{ 
+  setData(prevData=>{ 
+    const updatedSelectedOption={...prevData.selectedOption,[type]:index}
+    const updatedPrice=calulatePrice(prevData?.quantity,updatedSelectedOption)
+    return {
+      ...prevData,
+      selectedOption:updatedSelectedOption,
+      price:updatedPrice
+    }
+  })
+}
   const removeCartHandler = () => {};
   const addCartHandler = () => {};
   const addItemToCart = () => {};
@@ -126,7 +149,7 @@ const AddItemModal: FC<{item: any; restaurant: any; onClose: () => void}> = ({
                     <TouchableOpacity
                       key={i}
                       style={styles.optionContainer}
-                      onPress={() => {}}>
+                      onPress={() => {selectedOptionHandler(customization?.type,i)}}>
                       <CustomText fontFamily="Okra-Medium" fontSize={11}>
                         {option?.name}
                       </CustomText>
@@ -184,7 +207,7 @@ const AddItemModal: FC<{item: any; restaurant: any; onClose: () => void}> = ({
           style={styles.addButtonContainer}
           onPress={addItemToCart}>
           <CustomText color="#fff" fontFamily="Okra-Medium" variant="h5">
-            Add item -৳{10}
+            Add item -৳{data?.price}
           </CustomText>
         </TouchableOpacity>
         <SafeAreaView />
