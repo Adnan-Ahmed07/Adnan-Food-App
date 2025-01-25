@@ -17,6 +17,7 @@ import ScalePress from '@components/ui/ScalePress';
 import AnimatedNumber from 'react-native-animated-numbers';
 import {RFValue} from 'react-native-responsive-fontsize';
 import { useAppDispatch } from '@states/reduxHook';
+import { addCustomizableItem } from '@states/reducers/cartSlice';
 
 function transformSelectedOptions(
   selectedOption: any,
@@ -24,8 +25,8 @@ function transformSelectedOptions(
 ){ 
    return Object.entries(selectedOption).map(([type, index]) => {
 
-     const customization= customizationOptions?.find((options: any)=>options.type===type)
-       if(! customization || !customization?.option[index as number]){
+     const customization= customizationOptions?.find((option: any)=>option.type===type)
+       if(! customization || !customization?.options[index as number]){
          throw new Error(`Invalid customization type or options for ${type}`)
        }
         return {
@@ -97,9 +98,44 @@ const selectedOptionHandler=(type:string,index:number)=>{
     }
   })
 }
-  const removeCartHandler = () => {};
-  const addCartHandler = () => {};
-  const addItemToCart = () => {};
+  const removeCartHandler = () => {
+    if(data?.quantity>1){
+    setData(prevData=>({
+      ...prevData,
+      quantity:prevData?.quantity-1,
+      price:calulatePrice(prevData?.quantity-1,prevData?.selectedOption)
+    }))
+  }else{ 
+    
+  }
+
+
+  };
+  const addCartHandler = () => {
+  setData(prevData=>({
+    ...prevData,
+    quantity:prevData?.quantity+1,
+    price:calulatePrice(prevData?.quantity+1,prevData?.selectedOption)
+  }))
+     
+
+
+  };
+  const addItemIntoCard =async () => {
+    const customizationOptions=transformSelectedOptions(data?.selectedOption,item?.customizationOptions)
+     .sort((a,b)=>a.type.localeCompare(b.type)) 
+     const customizedData={ 
+      restaurant:restaurant,
+      item:item,
+      customization: { 
+        quantity:data?.quantity,
+        price:data?.price,
+        customizationOptions:customizationOptions
+      }
+     }
+     dispatch(addCustomizableItem(customizedData))
+     onClose()
+  };
   return (
     <View>
       <View style={styles.headerContainer}>
@@ -191,7 +227,7 @@ const selectedOptionHandler=(type:string,index:number)=>{
           <AnimatedNumber
             includeComma={false}
             animationDuration={300}
-            animateToNumber={1}
+            animateToNumber={data?.quantity}
             fontStyle={styles.animatedCount}
           />
           <ScalePress onPress={addCartHandler}>
@@ -205,7 +241,7 @@ const selectedOptionHandler=(type:string,index:number)=>{
         </View>
         <TouchableOpacity
           style={styles.addButtonContainer}
-          onPress={addItemToCart}>
+          onPress={addItemIntoCard}>
           <CustomText color="#fff" fontFamily="Okra-Medium" variant="h5">
             Add item -৳{data?.price}
           </CustomText>
