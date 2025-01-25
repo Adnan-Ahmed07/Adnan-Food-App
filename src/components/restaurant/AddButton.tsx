@@ -16,6 +16,8 @@ import {RFValue} from 'react-native-responsive-fontsize';
 import AnimatedNumbers from 'react-native-animated-numbers';
 import CustomModal from '@components/modal/CustomModal';
 import AddItemModal from '@components/modal/AddItemModal';
+import RepeatItemModal from '@components/modal/RepeatItemModal';
+
 const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
   const dispatch = useAppDispatch();
   const {styles} = useStyles(foodStyles);
@@ -23,8 +25,33 @@ const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
     selectRestaurantCartItem(restaurant?.id, item?.id),
   );
   const modalRef = useRef<any>(null);
+  
 
-const openAddmodal=()=>{ 
+  const openRepeatModal=()=>{ 
+    modalRef?.current?.openModal(
+     <RepeatItemModal 
+     item={item}
+     onOpenAddModal={()=>
+     { 
+        modalRef?.current?.closeModal()
+        setTimeout(()=>{ 
+          openAddModal()
+        },200)
+     }
+     }
+     CloseModal={()=>modalRef.current?.closeModal()}
+      restaurant={restaurant}
+     
+     />
+  
+    ) 
+  
+  }
+
+
+
+
+const openAddModal=()=>{ 
   modalRef?.current?.openModal(
    <AddItemModal 
    item={item}
@@ -41,10 +68,10 @@ const openAddmodal=()=>{
   const addCartHandler = useCallback(() => {
     if (item?.isCustomizable) {
       if (cart != null) {
-        console.log('open modal');
+        openRepeatModal()
         return;
       }
-      openAddmodal()
+      openAddModal()
     } else {
       dispatch(
         addItemToCart({
@@ -77,6 +104,7 @@ const openAddmodal=()=>{
   return (
     <>
     <CustomModal ref={modalRef}/>
+    
     <View style={styles.addButtonContainer(cart != null)}>
     {cart ? (
         <View style={styles.selectedContainer}>
