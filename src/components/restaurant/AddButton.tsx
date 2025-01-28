@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity} from 'react-native';
-import React, {FC, useCallback, useRef} from 'react';
+import React, {FC, memo, useCallback, useRef} from 'react';
 import {useAppDispatch, useAppSelector} from '@states/reduxHook';
 import {useStyles} from 'react-native-unistyles';
 import {foodStyles} from '@unistyles/foodStyles';
@@ -31,14 +31,7 @@ const AddButton: FC<{item: any; restaurant: any}> = ({item, restaurant}) => {
     modalRef?.current?.openModal(
      <RepeatItemModal 
      item={item}
-     onOpenAddModal={()=>
-     { 
-        modalRef?.current?.closeModal()
-        setTimeout(()=>{ 
-          openAddModal()
-        },200)
-     }
-     }
+     onOpenAddModal={openAddModal}
      CloseModal={()=>modalRef.current?.closeModal()}
       restaurant={restaurant}
      
@@ -166,4 +159,4 @@ const openAddModal=()=>{
   );
 };
 
-export default AddButton;
+export default memo(AddButton);
