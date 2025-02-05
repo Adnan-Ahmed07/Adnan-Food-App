@@ -8,6 +8,15 @@
 
 ![Screenshot_255](https://github.com/user-attachments/assets/e9920531-4e7b-4fc8-abac-64befac275e0)
 
+![Screenshot_256](https://github.com/user-attachments/assets/05268b62-db6a-4843-85a9-7fa3694ac433)
+
+![Screenshot_257](https://github.com/user-attachments/assets/ac140008-0891-4998-b9f8-3ef2f9fc8e9e)
+![Screenshot_258](https://github.com/user-attachments/assets/be34403e-0f71-41fa-9be4-21686c7f1770)
+![Screenshot_259](https://github.com/user-attachments/assets/723df9d9-e12c-475c-9f4c-1b70c4fb9686)
+
+![Screenshot_261](https://github.com/user-attachments/assets/a9540328-b301-4983-82a2-7d910aed0d89)
+![Screenshot_260](https://github.com/user-attachments/assets/f44deaf0-249a-40b7-be63-18910f87fbba)
+
 <h1>still now it's looks like that</h1>
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
