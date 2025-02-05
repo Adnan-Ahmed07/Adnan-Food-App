@@ -6,7 +6,8 @@
 
 ![Screenshot_205](https://github.com/user-attachments/assets/2e5fcfaf-1aae-4443-abc8-85a0441c681b)
 
-![Screenshot_204](https://github.com/user-attachments/assets/4d571180-3f24-425a-8651-e97d26a70a22)
+![Screenshot_255](https://github.com/user-attachments/assets/e9920531-4e7b-4fc8-abac-64befac275e0)
+
 <h1>still now it's looks like that</h1>
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
